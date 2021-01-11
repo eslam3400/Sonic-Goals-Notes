@@ -21,7 +21,6 @@
         {{fetchNotes}}
         <h1>Notes</h1>
         <form name="newform" v-on:submit.prevent="addNote">
-            <label for="newNote">Add to the todo list</label>
             <input type="text" name="newNote" id="newNote" v-model="newNote">
             <button type="submit">Add note</button>
         </form>
