@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');
+
+/* Index */
+.index__modal .modal-dialog{
+    margin: 8vh 30vw 0 30vw;
+}
+.index__modal .modal-content{
+    width: 40vw;
+}
+.header{
+    font-family: 'Hachi Maru Pop', cursive;
+    margin-top: 32vh;
+}
+.header__sonic{
+    font-size: 80px;
+}
+.header__links{
+    text-decoration: none;
+}
+
+@media (max-width: 850px) {
+    .index__modal .modal-dialog{
+        margin: 8vh 20vw 0 20vw;
+    }
+    .index__modal .modal-content{
+        width: 60vw;
+    }
+}
+@media (max-width: 575.98px) {
+    .index__modal .modal-dialog{
+        margin: 8vh 10vw 0 10vw;
+    }
+    .index__modal .modal-content{
+        width: 80vw;
+    }
+}
