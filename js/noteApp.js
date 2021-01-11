@@ -1,5 +1,6 @@
-let userStatus = 'offline'
-if (localStorage.getItem('sonic__user') != null) userStatus = 'online'
+// let userStatus = 'offline'
+// if (localStorage.getItem('sonic__user') != null) userStatus = 'online'
+if (localStorage.getItem('sonic__user') == null) location.href = '../index.html'
 let app = Vue.createApp({
     data() {
         return {
@@ -10,7 +11,8 @@ let app = Vue.createApp({
     },
     computed: {
         fetchNotes() {
-            if (userStatus == 'online') getNotes(localStorage.getItem('sonic__user'), (_notes,_userId) => { this.notes = _notes; this.userId = _userId})
+            // if (userStatus == 'online') 
+            getNotes(localStorage.getItem('sonic__user'), (_notes,_userId) => { this.notes = _notes; this.userId = _userId})
         }
     },
     methods: {
@@ -23,16 +25,18 @@ let app = Vue.createApp({
             }
             this.notes.push(note)
             this.newNote = ''
-            if (userStatus == 'online') updateNotes(this.notes,this.userId)
+            // if (userStatus == 'online') 
+            updateNotes(this.notes,this.userId)
         },
         deleteNote(noteId) {
             this.notes = this.notes.filter((note)=> { return note.id != noteId });
-            if (userStatus == 'online') updateNotes(this.notes,this.userId)
+            // if (userStatus == 'online') 
+            updateNotes(this.notes,this.userId)
         }
     },
 }).mount('#note-app')
 
-let getNotesLocal = (callBack)=>{
-    let notes = localStorage.getItem('sonic__localuser')
-    callBack(notes)
-}
+// let getNotesLocal = (callBack)=>{
+//     let notes = localStorage.getItem('sonic__localuser')
+//     callBack(notes)
+// }
